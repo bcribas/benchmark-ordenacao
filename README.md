@@ -7,6 +7,21 @@ A ideia deste repositório é ajudar a compreensão do tempo de execução de
 cada algoritmo na prática e também para que o Aluno modifique parte dos
 métodos para entender se há possibilidade de melhoria em cada método.
 
+# Verificando as dependências
+
+Para verificar se você possui instalado todos comando necessários execute
+
+```
+make check
+```
+
+Será mostrado na tela caso algum comando esteja faltando. Você deverá
+instalar os comandos que estejam faltando para conseguir executar o
+experimento com sucesso.
+
+A lista de dependências ainda pode não ser exaustiva, se você identificar a
+falta de alguma verificação, abra uma ISSUE ou mande um PULL REQUEST :)
+
 # Compilando e gerando arquivos de benchmark
 
 Para compilar e gerar os arquivos de benchmark basta rodar o comando:

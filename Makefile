@@ -25,6 +25,15 @@ TIMEOUT?=0
 
 all: input/.in ${BINARY}
 
+check:
+	@for COMANDO in time timeout shuf md5sum sort bash gcc; do\
+		if ! which $$COMANDO >/dev/null; then\
+			echo "Faltando comando '$$COMANDO'";\
+			exit 1;\
+		fi;\
+	done
+	@echo "As dependências parecem estar todas presentes"
+
 input/.in:
 	mkdir -p input
 	cd input && bash ../gera-entrada
@@ -67,7 +76,7 @@ testesimples: $(BINARY) input/.in
   done
 
 
-.PHONY: teste testesimples
+.PHONY: teste testesimples check
 
 clean:
 	rm -f $(BINARY) time.*
