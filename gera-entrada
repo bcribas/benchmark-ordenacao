@@ -1,0 +1,40 @@
+#!/bin/bash
+# Copyright(C) 2020, Bruno César Ribas <bruno.ribas@unb.br>
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of version 2.1 of the GNU Lesser General Public License
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it would be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+function ordenado()
+{
+  local size=$1
+  echo $size
+  shuf -i0-5000000 -n $size|sort -n
+}
+
+function reverso()
+{
+  local size=$1
+  echo $size
+  shuf -i0-5000000 -n $size|sort -n -r
+}
+
+function aleatorio()
+{
+  local size=$1
+  echo $size
+  shuf -i0-5000000 -n $size
+}
+
+for((i=8;i<=20;i++)); do
+  tam=$((1<<i))
+  k=$(printf "%02d" $i)
+  ordenado $tam > $k-ordenado &
+  reverso $tam > $k-reverso &
+  aleatorio $tam > $k-aleatorio &
+done
+wait
