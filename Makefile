@@ -34,7 +34,7 @@ input/.in:
 	gcc -D__$@__ -O2 -static $^ -o $@
 
 printorder:
-	@for T in 08 09 10 11 12 13 15 15 16 17 18 19 20;do\
+	@for T in 08 09 10 11 12 13 14 15 16 17 18 19 20;do\
 		printf "  %s  " $$T;\
 	done;\
 	echo
