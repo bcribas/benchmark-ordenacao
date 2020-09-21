@@ -30,11 +30,28 @@ function aleatorio()
   shuf -i0-5000000 -n $size
 }
 
+function quaseordenado()
+{
+  local size=$1
+  local V=(`eval echo {0..$size}`)
+  local tochange=$((size/10/2))
+  for((i=0;i<tochange;i++)); do
+    T=$((RANDOM%size))
+    T2=$((RANDOM%size))
+    x=${V[$T]}
+    V[$T]=${V[$T2]}
+    V[$T2]=$x
+  done
+  echo $size
+  echo ${V[@]}|tr ' ' '\n'
+}
+
 for((i=8;i<=20;i++)); do
   tam=$((1<<i))
   k=$(printf "%02d" $i)
   ordenado $tam > $k-ordenado &
   reverso $tam > $k-reverso &
   aleatorio $tam > $k-aleatorio &
+  quaseordenado $tam > $k-quaseordenado &
 done
 wait
