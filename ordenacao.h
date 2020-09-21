@@ -54,5 +54,9 @@ void shellsort(Item *v,int l,int r);
 #ifdef __quicksortM3__
 #define sort(v,l,r) quicksortM3(v,l,r);
 #endif
+#ifdef __mergesort__
+void mergesort(Item *V,int l, int r);
+#define sort(v,l,r) mergesort(v,l,r);
+#endif
 
 #endif
