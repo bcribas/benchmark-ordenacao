@@ -18,7 +18,8 @@ BINARY?=dummy\
 				shellsort\
 				quicksort\
 				quicksortM3\
-				mergesort
+				mergesort\
+				systemqsort
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
 REVERSO=$(wildcard input/*reverso)

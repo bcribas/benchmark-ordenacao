@@ -58,5 +58,9 @@ void shellsort(Item *v,int l,int r);
 void mergesort(Item *V,int l, int r);
 #define sort(v,l,r) mergesort(v,l,r);
 #endif
+#ifdef __systemqsort__
+int compar(const void *a,const void *b);
+#define sort(v,l,r) qsort(v,r-l+1,sizeof(Item),compar);
+#endif
 
 #endif
