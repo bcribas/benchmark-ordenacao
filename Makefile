@@ -74,7 +74,7 @@ testesimples: $(BINARY) input/.in
 	@for B in $(BINARY); do\
 		printf "$$B ";\
 		./$$B < input/10-reverso|md5sum;\
-  done
+	done
 
 
 .PHONY: teste testesimples check
