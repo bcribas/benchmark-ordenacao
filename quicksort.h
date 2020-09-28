@@ -10,27 +10,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#include "quicksort.h"
+#ifndef __quicksortH__
+#define __quicksortH__
 #include "ordenacaomacros.h"
 
-static int separa(Item *V,int l,int r)
-{
-  Item c=V[r];
-  int j=l;
-  for(int k=l;k<r;k++)
-    if(less(V[k],c))
-    {
-      exch(V[k],V[j]);
-      j++;
-    }
-  exch(V[j],V[r]);
-  return j;
-}
+void quicksort(Item *,int, int);
 
-void quicksort(Item *V,int l, int r)
-{
-  if (r<=l) return;
-  int j=separa(V,l,r);
-  quicksort(V,l,j-1);
-  quicksort(V,j+1,r);
-}
+#ifdef __quicksortonly__
+#define sort(v,l,r) quicksort(v,l,r)
+#endif
+
+#endif
