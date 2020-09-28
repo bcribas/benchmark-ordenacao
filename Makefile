@@ -77,9 +77,10 @@ testesimples: $(BINARY) input/.in
 		./$$B < input/10-reverso|md5sum;\
 	done
 
-
 .PHONY: teste testesimples check
 
 clean:
 	rm -f $(BINARY) time.*
+
+dist-clean: clean
 	rm -rf input/
