@@ -10,7 +10,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#include "ordenacao.h"
+#include "insertionsort.h"
+#include "ordenacaomacros.h"
 
 void insertionsort(Item *v,int l,int r)
 {

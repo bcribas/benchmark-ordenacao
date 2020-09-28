@@ -10,12 +10,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#include "insertionsortslow.h"
+#ifndef __insertionsortslowH__
+#define __insertionsortslowH__
 #include "ordenacaomacros.h"
 
-void insertionsortslow(Item *v,int l,int r)
-{
-  for(int i=l+1;i<=r;i++)
-    for(int j=i;j>l;j--)
-      cmpexch(v[j-1],v[j]);
-}
+void insertionsortslow(Item *,int,int);
+
+#ifdef __insertionsortslowonly__
+#define sort(v,l,r) insertionsortslow(v,l,r)
+#endif
+
+#endif
