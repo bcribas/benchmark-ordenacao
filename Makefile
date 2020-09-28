@@ -77,6 +77,9 @@ testesimples: $(BINARY) input/.in
 		./$$B < input/10-reverso|md5sum;\
 	done
 
+echo%:
+	@echo
+
 .PHONY: teste testesimples check
 
 clean:
