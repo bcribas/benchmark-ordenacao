@@ -46,6 +46,13 @@ function quaseordenado()
   echo ${V[@]}|tr ' ' '\n'
 }
 
+function muitosrepetidos()
+{
+  local size=$1
+  echo $size
+  shuf -r -i0-$((size/3)) -n $size|sort -n -r
+}
+
 for((i=8;i<=20;i++)); do
   tam=$((1<<i))
   k=$(printf "%02d" $i)
@@ -53,5 +60,6 @@ for((i=8;i<=20;i++)); do
   reverso $tam > $k-reverso &
   aleatorio $tam > $k-aleatorio &
   quaseordenado $tam > $k-quaseordenado &
+  muitosrepetidos $tam > $k-muitosrepetidos &
 done
 wait
