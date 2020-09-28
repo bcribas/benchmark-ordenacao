@@ -11,7 +11,8 @@
  *
  */
 
-#include "ordenacao.h"
+#include "mergesort.h"
+#include "mergesort.h"
 #include <stdlib.h>
 
 void merge(Item *V, int l, int m, int r)
