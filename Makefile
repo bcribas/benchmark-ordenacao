@@ -51,6 +51,7 @@ printorder:
 	echo
 
 time.%: $(BINARY) input/.in
+	@echo "--- $@ ---"
 	@ulimit -s 32000
 	@for B in $(BINARY); do\
 		echo "# $$B";\
