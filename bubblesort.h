@@ -11,12 +11,13 @@
  *
  */
 
-#include "bubblesort.h"
+#ifndef __bubblesortH__
+#define __bubblesortH__
 #include "ordenacaomacros.h"
+void bubblesort(Item *,int,int);
 
-void bubblesort(Item *v,int l,int r)
-{
-  for(int i=l;i<r;i++)
-    for(int j=l+1;j<=r;j++)
-      cmpexch(v[j-1],v[j]);
-}
+#ifdef __bubblesortonly__
+#define sort(v,l,r) bubblesort(v,l,r)
+#endif
+
+#endif
