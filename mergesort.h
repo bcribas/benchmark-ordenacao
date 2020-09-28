@@ -15,8 +15,8 @@
 #define __mergesortH__
 
 #include "ordenacaomacros.h"
-void merge(Item *V, int l, int m, int r);
-void mergesort(Item *V,int l, int r);
+void merge(Item *, int, int, int);
+void mergesort(Item *,int, int);
 
 #ifdef __mergesortonly__
 #define sort(v,l,r) mergesort(v,l,r);
