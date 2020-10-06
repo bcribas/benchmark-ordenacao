@@ -13,6 +13,7 @@
 #ifndef __quicksortH__
 #define __quicksortH__
 #include "ordenacaomacros.h"
+#include "separa.h"
 
 void quicksort(Item *,int, int);
 

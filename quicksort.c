@@ -13,20 +13,6 @@
 #include "quicksort.h"
 #include "ordenacaomacros.h"
 
-static int separa(Item *V,int l,int r)
-{
-  Item c=V[r];
-  int j=l;
-  for(int k=l;k<r;k++)
-    if(less(V[k],c))
-    {
-      exch(V[k],V[j]);
-      j++;
-    }
-  exch(V[j],V[r]);
-  return j;
-}
-
 void quicksort(Item *V,int l, int r)
 {
   if (r<=l) return;
