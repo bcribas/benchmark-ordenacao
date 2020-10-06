@@ -11,28 +11,14 @@
  *
  */
 
-#include "shellsort.h"
+#ifndef __shellsortH__
+#define __shellsortH__
 #include "ordenacaomacros.h"
 
-static void insertionsortH(Item *v,int l,int r,int h)
-{
-  for(int i=l+h;i<=r;i++)
-  {
-    int j=i; Item tmp=v[j];
-    while(j>=l+h && less(tmp,v[j-h]))
-    {
-      v[j]=v[j-h];
-      j-=h;
-    }
-    v[j]=tmp;
-  }
-}
+void shellsort(Item *v,int l,int r);
 
-void shellsort(Item *v,int l,int r)
-{
-  int h;
-  int t=(r-l)+1;
-  for(h=1;h<=(t-1)/9;h=3*h+1);
-  for(;h>0;h/=3)
-    insertionsortH(v,0,t-1,h);
-}
+#ifdef __shellsortonly__
+#define sort(v,l,r) shellsort(v,l,r)
+#endif
+
+#endif
