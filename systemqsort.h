@@ -10,14 +10,13 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
+#ifndef __systemqsortH__
+#define __systemqsortH__
 #include "ordenacaomacros.h"
-#include "systemqsort.h"
+int compar(const void *a,const void *b);
 
-int compar(const void *a,const void *b)
-{
-  if (less(*((Item*)a),*((Item*)b)))
-    return -1;
-  else if (lesseq(*((Item*)a),*((Item*)b)))
-    return 0;
-  return 1;
-}
+#ifdef __systemqsortonly__
+#define sort(v,l,r) qsort(v,r-l+1,sizeof(Item),compar);
+#endif
+
+#endif
