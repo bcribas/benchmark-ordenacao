@@ -10,9 +10,11 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#include "ordenacao.h"
+
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
+#include "ordenacaomacros.h"
 
 int main(void)
 {
