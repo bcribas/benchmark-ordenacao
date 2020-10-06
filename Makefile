@@ -23,7 +23,8 @@ BINARY?=dummy\
 				mergesort\
 				systemqsort\
 				introsortquickmerge\
-				introsortquickmergelongjmp
+				introsortquickmergelongjmp\
+				cppsort
 
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
