@@ -10,19 +10,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
+#ifndef __quicksortM3H__
+#define __quicksortM3H__
 #include "ordenacaomacros.h"
-#include "quicksortM3.h"
-#include "separa.h"
 
-void quicksortM3(Item *V,int l, int r)
-{
-  if (r<=l) return;
+void quicksortM3(Item *V,int l, int r);
 
-  cmpexch(V[(l+r)/2],V[r]);
-    cmpexch(V[l],V[(l+r)/2]);
-      cmpexch(V[r],V[(l+r)/2]);
+#ifdef __quicksortM3only__
+#define sort(v,l,r) quicksortM3(v,l,r)
+#endif
 
-  int j=separa(V,l,r);
-  quicksortM3(V,l,j-1);
-  quicksortM3(V,j+1,r);
-}
+#endif
