@@ -10,3 +10,7 @@ selectionsortR
 shellsort
 mergesort
 systemqsort
+introsortquickmerge
+introsortquickmergelongjmp
+quicksortM3insertion
+quicksortinsertion
