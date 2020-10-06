@@ -17,13 +17,20 @@ BINARY?=dummy\
 				insertionsort\
 				shellsort\
 				quicksort\
+				quicksortinsertion\
 				quicksortM3\
+				quicksortM3insertion\
 				mergesort\
-				systemqsort
+				systemqsort\
+				introsortquickmerge\
+				introsortquickmergelongjmp
+
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
 REVERSO=$(wildcard input/*reverso)
 TIMEOUT?=0
+CFLAGS=-O2 -static
+CXXFLAGS=-O2 -static
 
 all: input/.in ${BINARY}
 
@@ -41,8 +48,29 @@ input/.in:
 	cd input && bash ../gera-entrada
 	touch input/.in
 
-%: %.c main.c
-	gcc -D__$@__ -O2 -static $^ -o $@
+%: main.c %.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+dummy: main.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+quicksort: main.c quicksort.c separa.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+quicksortinsertion: main.c quicksortinsertion.c separa.c insertionsort.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+quicksortM3: main.c quicksortM3.c separa.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+quicksortM3insertion: main.c quicksortM3insertion.c separa.c insertionsort.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+introsortquickmerge: main.c introsortquickmerge.c separa.c insertionsort.c mergesort.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
+
+introsortquickmergelongjmp: main.c introsortquickmergelongjmp.c separa.c insertionsort.c mergesort.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
 
 printorder:
 	@for T in 08 09 10 11 12 13 14 15 16 17 18 19 20;do\
