@@ -13,21 +13,21 @@ function ordenado()
 {
   local size=$1
   echo $size
-  shuf -i0-5000000 -n $size|sort -n
+  shuf -i0-$((size*2)) -n $size|sort -n
 }
 
 function reverso()
 {
   local size=$1
   echo $size
-  shuf -i0-5000000 -n $size|sort -n -r
+  shuf -i0-$((size*2)) -n $size|sort -n -r
 }
 
 function aleatorio()
 {
   local size=$1
   echo $size
-  shuf -i0-5000000 -n $size
+  shuf -i0-$((size*2)) -n $size
 }
 
 function quaseordenado()
