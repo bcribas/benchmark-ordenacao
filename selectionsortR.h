@@ -10,17 +10,15 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
+#ifndef __selectionsortRH__
+#define __selectionsortRH__
+
 #include "ordenacaomacros.h"
-#include "selectionsortR.h"
 
-void selectionsortR(Item *v,int l,int r)
-{
-  if(l>=r) return;
+void selectionsortR(Item *v,int l,int r);
 
-  int min=l;
-  for(int j=l+1;j<=r;j++)
-    if(less(v[j],v[min]))
-      min=j;
-  exch(v[l],v[min]);
-  selectionsortR(v,l+1,r);
-}
+#ifdef __selectionsortRonly__
+#define sort(v,l,r) selectionsortR(v,l,r)
+#endif
+
+#endif
