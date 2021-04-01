@@ -70,6 +70,14 @@
 #define __systemqsortonly__
 #include "systemqsort.h"
 
+#elif defined(__pqsortsimple__)
+#define __pqsortonly__
+#include "pqsortsimple.h"
+
+#elif defined(__heapsort__)
+#define __heapsortonly__
+#include "heapsort.h"
+
 #elif defined(__dummy__)
 #warning "DUMMY SORT, it will not sort"
 #define sort ;

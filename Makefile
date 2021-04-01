@@ -24,7 +24,9 @@ BINARY?=dummy\
 				systemqsort\
 				introsortquickmerge\
 				introsortquickmergelongjmp\
-				cppsort
+				cppsort\
+				pqsortsimple\
+				heapsort
 
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
@@ -72,6 +74,12 @@ introsortquickmerge: main.c introsortquickmerge.c separa.c insertionsort.c merge
 
 introsortquickmergelongjmp: main.c introsortquickmergelongjmp.c separa.c insertionsort.c mergesort.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
+
+pqsortsimple: main.c pqsortsimple.c priority-queue.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+heapsort: main.c heapsort.c priority-queue.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@
 
 printorder:
 	@for T in 08 09 10 11 12 13 14 15 16 17 18 19 20;do\
