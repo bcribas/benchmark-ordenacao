@@ -66,6 +66,10 @@
 #define __introsortquickmergelongjmponly__
 #include "introsortquickmergelongjmp.h"
 
+#elif defined(__introsortquickheaplongjmp__)
+#define __introsortquickheaplongjmponly__
+#include "introsortquickheaplongjmp.h"
+
 #elif defined(__systemqsort__)
 #define __systemqsortonly__
 #include "systemqsort.h"
