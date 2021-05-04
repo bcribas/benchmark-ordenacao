@@ -16,8 +16,8 @@
 
 void pqsortsimple(Item *v, int l, int r)
 {
-	int k;
-	PQinit((r-l+1));
-	for(k=l;k<=r;k++) PQinsert(v[k]);
-	for(k=r;k>=l;k--) v[k]=PQdelmax();
+  int k;
+  PQinit((r-l+1));
+  for(k=l;k<=r;k++) PQinsert(v[k]);
+  for(k=r;k>=l;k--) v[k]=PQdelmax();
 }
