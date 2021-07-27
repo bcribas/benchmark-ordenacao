@@ -25,6 +25,7 @@ BINARY?=dummy\
 				introsortquickmerge\
 				introsortquickmergelongjmp\
 				introsortquickheaplongjmp\
+				radixsort\
 				cppsort\
 				pqsortsimple\
 				heapsort
@@ -77,6 +78,9 @@ introsortquickmergelongjmp: main.c introsortquickmergelongjmp.c separa.c inserti
 	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
 
 introsortquickheaplongjmp: main.c introsortquickheaplongjmp.c separa.c insertionsort.c heapsort.c priority-queue.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
+
+radixsort: main.c radixsort.c separa.c insertionsort.c mergesort.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
 
 pqsortsimple: main.c pqsortsimple.c priority-queue.c
