@@ -152,5 +152,16 @@ void radixsort(Item *v, int l, int n){
     if (k == 0){
       j = 10;
     }
+
+  free(zero);
+  free(um);
+  free(dois);
+  free(tres);
+  free(quatro);
+  free(cinco);
+  free(seis);
+  free(sete);
+  free(oito);
+  free(nove);
   }
 }
