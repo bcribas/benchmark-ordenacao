@@ -7,6 +7,7 @@
 
 void radixsort(Item *v, int l, int n){
   // v = vetor de números
+  // l = posição onde começa o vetor
   // n = quantidade de números no vetor
   // ex.: [0, 1, 2, 3] -> n=4
 
@@ -30,16 +31,16 @@ void radixsort(Item *v, int l, int n){
   for (int j = 0; j < maxdigitos; j++){
     int z = 0, u = 0, d = 0, t = 0, q = 0, c = 0, s = 0, st = 0, o = 0, nv = 0;
 
-    int *zero = malloc(n * sizeof(int));
-    int *um = malloc(n * sizeof(int));
-    int *dois = malloc(n * sizeof(int));
-    int *tres = malloc(n * sizeof(int));
-    int *quatro = malloc(n * sizeof(int));
-    int *cinco = malloc(n * sizeof(int));
-    int *seis = malloc(n * sizeof(int));
-    int *sete = malloc(n * sizeof(int));
-    int *oito = malloc(n * sizeof(int));
-    int *nove = malloc(n * sizeof(int));
+    int *zero = malloc((n-l+1) * sizeof(int));
+    int *um = malloc((n-l+1) * sizeof(int));
+    int *dois = malloc((n-l+1) * sizeof(int));
+    int *tres = malloc((n-l+1) * sizeof(int));
+    int *quatro = malloc((n-l+1) * sizeof(int));
+    int *cinco = malloc((n-l+1) * sizeof(int));
+    int *seis = malloc((n-l+1) * sizeof(int));
+    int *sete = malloc((n-l+1) * sizeof(int));
+    int *oito = malloc((n-l+1) * sizeof(int));
+    int *nove = malloc((n-l+1) * sizeof(int));
 
     int k = 0, h = 0, zeros = 0;
     aux1 = pow(10, j);
@@ -150,18 +151,18 @@ void radixsort(Item *v, int l, int n){
       h++;
     }
     if (k == 0){
-      j = 10;
+      j = maxdigitos;
     }
 
-  free(zero);
-  free(um);
-  free(dois);
-  free(tres);
-  free(quatro);
-  free(cinco);
-  free(seis);
-  free(sete);
-  free(oito);
-  free(nove);
+    free(zero);
+    free(um);
+    free(dois);
+    free(tres);
+    free(quatro);
+    free(cinco);
+    free(seis);
+    free(sete);
+    free(oito);
+    free(nove);
   }
 }
