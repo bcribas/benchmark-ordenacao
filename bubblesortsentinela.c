@@ -1,6 +1,6 @@
 #include "ordenacaomacros.h"
 
-bubbleSort(Item *v, int l, int r)
+void bubbleSortSentinela(Item *v, int l, int r)
 {
   int sentinela;
 
