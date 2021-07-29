@@ -80,7 +80,7 @@ introsortquickmergelongjmp: main.c introsortquickmergelongjmp.c separa.c inserti
 introsortquickheaplongjmp: main.c introsortquickheaplongjmp.c separa.c insertionsort.c heapsort.c priority-queue.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
 
-radixsort: main.c radixsort.c separa.c insertionsort.c mergesort.c
+radixsort: main.c radixsort.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
 
 pqsortsimple: main.c pqsortsimple.c priority-queue.c
