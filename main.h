@@ -18,6 +18,10 @@
 #define __bubblesortonly__
 #include "bubblesort.h"
 
+#elif defined(__bubblesortsentinela__)
+#define __bubblesortSentinelaonly__
+#include "bubblesortsentinela.h"
+
 #elif defined(__selectionsort__)
 #define __selectionsortonly__
 #include "selectionsort.h"
@@ -87,7 +91,6 @@
 #define sort ;
 
 #endif
-
 
 #ifndef sort
 #error "NO SORTING ALGORITHM DEFINED"
