@@ -1,8 +1,0 @@
-{
-  "files.associations": {
-    "ordenacaomacros.h": "c",
-    "bubblesort.h": "c",
-    "bubblesortsentinela.h": "c",
-    "algorithm": "cpp"
-  }
-}
