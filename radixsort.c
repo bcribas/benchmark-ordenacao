@@ -8,7 +8,7 @@
 void radixsort(Item *v, int l, int n){
   // v = vetor de números
   // l = posição onde começa o vetor
-  // n = quantidade de números no vetor
+  // n = índice mais a direita do vetor
   // ex.: [0, 1, 2, 3] -> n=4
 
   int aux, aux1, maxdigitos = 1;
