@@ -1,5 +1,5 @@
-#ifndef __radixsort__
-#define __radixsort__
+#ifndef __radixsortH__
+#define __radixsortH__
 #include "ordenacaomacros.h"
 void radixsort(Item *,int,int);
 

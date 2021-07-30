@@ -31,16 +31,16 @@ void radixsort(Item *v, int l, int n){
   for (int j = 0; j < maxdigitos; j++){
     int z = 0, u = 0, d = 0, t = 0, q = 0, c = 0, s = 0, st = 0, o = 0, nv = 0;
 
-    int *zero = malloc((n-l+1) * sizeof(int));
-    int *um = malloc((n-l+1) * sizeof(int));
-    int *dois = malloc((n-l+1) * sizeof(int));
-    int *tres = malloc((n-l+1) * sizeof(int));
-    int *quatro = malloc((n-l+1) * sizeof(int));
-    int *cinco = malloc((n-l+1) * sizeof(int));
-    int *seis = malloc((n-l+1) * sizeof(int));
-    int *sete = malloc((n-l+1) * sizeof(int));
-    int *oito = malloc((n-l+1) * sizeof(int));
-    int *nove = malloc((n-l+1) * sizeof(int));
+    Item *zero = malloc((n-l+2) * sizeof(Item));
+    Item *um = malloc((n-l+2) * sizeof(Item));
+    Item *dois = malloc((n-l+2) * sizeof(Item));
+    Item *tres = malloc((n-l+2) * sizeof(Item));
+    Item *quatro = malloc((n-l+2) * sizeof(Item));
+    Item *cinco = malloc((n-l+2) * sizeof(Item));
+    Item *seis = malloc((n-l+2) * sizeof(Item));
+    Item *sete = malloc((n-l+2) * sizeof(Item));
+    Item *oito = malloc((n-l+2) * sizeof(Item));
+    Item *nove = malloc((n-l+2) * sizeof(Item));
 
     int k = 0, h = 0, zeros = 0;
     aux1 = pow(10, j);
@@ -103,6 +103,18 @@ void radixsort(Item *v, int l, int n){
         nv++;
         k++;
       }
+      if(i == n-1){
+        zero[z] = 0;
+        um[u] = 0;
+        dois[d] = 0;
+        tres[t] = 0;
+        quatro[q] = 0;
+        cinco[c] = 0;
+        seis[s] = 0;
+        sete[st] = 0;
+        oito[o] = 0;
+        nove[nv] = 0;
+      }
     }
 
     // Reagrupando os vetores que estão divididos
@@ -110,43 +122,43 @@ void radixsort(Item *v, int l, int n){
       v[h] = 0;
       h++;
     }
-    for (int i = 0; zero[i] != '\0'; i++){
+    for (int i = 0; zero[i] != 0; i++){
       v[h] = zero[i];
       h++;
     }
-    for (int i = 0; um[i] != '\0'; i++){
+    for (int i = 0; um[i] != 0; i++){
       v[h] = um[i];
       h++;
     }
-    for (int i = 0; dois[i] != '\0'; i++){
+    for (int i = 0; dois[i] != 0; i++){
       v[h] = dois[i];
       h++;
     }
-    for (int i = 0; tres[i] != '\0'; i++){
+    for (int i = 0; tres[i] != 0; i++){
       v[h] = tres[i];
       h++;
     }
-    for (int i = 0; quatro[i] != '\0'; i++){
+    for (int i = 0; quatro[i] != 0; i++){
       v[h] = quatro[i];
       h++;
     }
-    for (int i = 0; cinco[i] != '\0'; i++){
+    for (int i = 0; cinco[i] != 0; i++){
       v[h] = cinco[i];
       h++;
     }
-    for (int i = 0; seis[i] != '\0'; i++){
+    for (int i = 0; seis[i] != 0; i++){
       v[h] = seis[i];
       h++;
     }
-    for (int i = 0; sete[i] != '\0'; i++){
+    for (int i = 0; sete[i] != 0; i++){
       v[h] = sete[i];
       h++;
     }
-    for (int i = 0; oito[i] != '\0'; i++){
+    for (int i = 0; oito[i] != 0; i++){
       v[h] = oito[i];
       h++;
     }
-    for (int i = 0; nove[i] != '\0'; i++){
+    for (int i = 0; nove[i] != 0; i++){
       v[h] = nove[i];
       h++;
     }
