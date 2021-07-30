@@ -18,7 +18,7 @@
 #define __bubblesortonly__
 #include "bubblesort.h"
 
-#elif defined(__bubblesortsentinela__)
+#elif defined(__bubblesortSentinela__)
 #define __bubblesortSentinelaonly__
 #include "bubblesortsentinela.h"
 
