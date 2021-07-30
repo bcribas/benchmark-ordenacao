@@ -18,8 +18,8 @@
 #define __bubblesortonly__
 #include "bubblesort.h"
 
-#elif defined(_bubblesortsentinela_)
-#define _bubblesortSentinelaonly_
+#elif defined(__bubblesortsentinela__)
+#define __bubblesortSentinelaonly__
 #include "bubblesortsentinela.h"
 
 #elif defined(__selectionsort__)
