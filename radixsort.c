@@ -103,19 +103,20 @@ void radixsort(Item *v, int l, int n){
         nv++;
         k++;
       }
-      if(i == n-1){
-        zero[z] = 0;
-        um[u] = 0;
-        dois[d] = 0;
-        tres[t] = 0;
-        quatro[q] = 0;
-        cinco[c] = 0;
-        seis[s] = 0;
-        sete[st] = 0;
-        oito[o] = 0;
-        nove[nv] = 0;
-      }
+      
     }
+
+    // Adicionando um 0 no final dos vetores
+    zero[z] = 0;
+    um[u] = 0;
+    dois[d] = 0;
+    tres[t] = 0;
+    quatro[q] = 0;
+    cinco[c] = 0;
+    seis[s] = 0;
+    sete[st] = 0;
+    oito[o] = 0;
+    nove[nv] = 0;
 
     // Reagrupando os vetores que estão divididos
     for (int i = 0; i < zeros && zeros != 0; i++){
