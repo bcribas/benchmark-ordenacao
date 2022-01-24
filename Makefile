@@ -29,7 +29,8 @@ BINARY?=dummy\
 				radixsort\
 				cppsort\
 				pqsortsimple\
-				heapsort
+				heapsort\
+				countingsort
 
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
