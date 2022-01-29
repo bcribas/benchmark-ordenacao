@@ -22,6 +22,10 @@
 #define __bubblesortSentinelaonly__
 #include "bubblesortsentinela.h"
 
+#elif defined(__combsort__)
+#define __combsortonly__
+#include "combsort.h"
+
 #elif defined(__countingsort__)
 #define __countingsortonly__
 #include "countingsort.h"

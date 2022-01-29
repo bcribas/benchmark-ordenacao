@@ -15,9 +15,10 @@ introsortquickmergelongjmp
 quicksortM3insertion
 quicksortinsertion
 cppsort
-radixsort
-pqsortsimple
-introsortquickheaplongjmp
-heapsort
-countingsort
 bubblesortsentinela
+combsort
+countingsort
+heapsort
+introsortquickheaplongjmp
+pqsortsimple
+radixsort

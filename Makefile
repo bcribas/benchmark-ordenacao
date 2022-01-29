@@ -12,6 +12,7 @@ SOURCE=$(wildcard *.c)
 BINARY?=dummy\
 				bubblesort\
 				bubblesortsentinela\
+				combsort\
 				selectionsort\
 				selectionsortR\
 				insertionsortslow\
