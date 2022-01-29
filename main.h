@@ -26,6 +26,10 @@
 #define __combsortonly__
 #include "combsort.h"
 
+#elif defined(__countingsort__)
+#define __countingsortonly__
+#include "countingsort.h"
+
 #elif defined(__selectionsort__)
 #define __selectionsortonly__
 #include "selectionsort.h"
