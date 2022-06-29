@@ -3,35 +3,34 @@
 Este repositório possui um pequeno e simples benchmark para os algoritmos de
 ordenação ensinados na disciplina de EDA-2 da UnB/FGA.
 
-A ideia deste repositório é ajudar a compreensão do tempo de execução de
-cada algoritmo na prática e também para que o Aluno modifique parte dos
-métodos para entender se há possibilidade de melhoria em cada método.
+A ideia é ajudar a compreensão do tempo de execução de cada algoritmo na 
+prática e também para que o aluno modifique parte dos métodos para entender
+se há possibilidade de melhoria em cada método.
 
 # Verificando as dependências
 
-Para verificar se você possui instalado todos comando necessários execute
+Para verificar se você possui instaladas todas as dependências necessárias, execute:
 
 ```
 make check
 ```
 
-Será mostrado na tela caso algum comando esteja faltando. Você deverá
-instalar os comandos que estejam faltando para conseguir executar o
+Será mostrado na tela caso alguma esteja faltando. Você deverá
+instalar as dependências que faltam para conseguir executar o
 experimento com sucesso.
 
 A lista de dependências ainda pode não ser exaustiva, se você identificar a
-falta de alguma verificação, abra uma ISSUE ou mande um PULL REQUEST :)
+falta de alguma verificação, abra uma [ISSUE](https://github.com/bcribas/benchmark-ordenacao/issues/new/choose) ou mande um [PULL REQUEST](https://github.com/bcribas/benchmark-ordenacao/compare) :)
 
 # Compilando e gerando arquivos de benchmark
 
-Para compilar e gerar os arquivos de benchmark basta rodar o comando:
+Para compilar e gerar os arquivos de benchmark, basta rodar o comando:
 
 ```
 make
 ```
 
-Dessa maneira ele irá compilar todos os algoritmos disponíveis e ainda
-gerará os arquivos de teste.
+Dessa maneira, ele irá compilar todos os algoritmos disponíveis e gerar os arquivos de teste.
 
 ## Arquivos de teste
 
@@ -50,50 +49,69 @@ nomenclatura indica exatamente do que se trata: POTENCIA-CATEGORIA
 
 # Métodos disponíveis
 
-- dummy : Apenas lê os números e os imprime, sem executar ordenação
-- bubblesort
-- selectionsort
-- selectionsortR - versão recursiva
-- insertionsortslow - versão bobinha do insertion sort
-- insertionsort
-- shellsort
-- quicksort - versão ingênua do quicksort
-- quicksortM3 - quick com Mediana de 3 elementos
+## Ordenação
+
+- [bubblesort](https://github.com/bcribas/benchmark-ordenacao/blob/master/bubblesort.c)
+- [combsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/combsort.c)
+- [countingsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/countingsort.c)
+- [cppsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/cppsort.cpp)
+- [heapsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/heapsort.c)
+- [insertionsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/insertionsort.c)
+- [insertionsortslow](https://github.com/bcribas/benchmark-ordenacao/blob/master/insertionsortslow.c) - versão bobinha do insertion sort
+- [introsortquickheaplong](https://github.com/bcribas/benchmark-ordenacao/blob/master/introsortquickheaplongjmp.c)
+- [introsortquickmerge](https://github.com/bcribas/benchmark-ordenacao/blob/master/introsortquickmerge.c)
+- [introsortquickmergelong](https://github.com/bcribas/benchmark-ordenacao/blob/master/introsortquickheaplongjmp.c)
+- [mergesort](https://github.com/bcribas/benchmark-ordenacao/blob/master/mergesort.c)
+- [pqsortsimple](https://github.com/bcribas/benchmark-ordenacao/blob/master/pqsortsimple.c)
+- [quicksort](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksort.c) - versão ingênua do quicksort
+- [quicksortM3](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksortM3.c) - quick com Mediana de 3 elementos
+- [quicksortM3insertion](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksortM3insertion.c)
+- [quicksortinsertion](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksortinsertion.c)
+- [radixsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/radixsort.c)
+- [selectionsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/selectionsort.c)
+- [selectionsortR](https://github.com/bcribas/benchmark-ordenacao/blob/master/selectionsortR.c) - versão recursiva
+- [shellsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/shellsort.c)
+- [systemqsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/systemqsort.c)
+
+## Outros  
+
+- [separa](https://github.com/bcribas/benchmark-ordenacao/blob/master/separa.c)
+- [priorityqueue](https://github.com/bcribas/benchmark-ordenacao/blob/master/priority-queue.c)
+- [gera-entrada](https://github.com/bcribas/benchmark-ordenacao/blob/master/gera-entrada)
+- [ordenacaomacros](https://github.com/bcribas/benchmark-ordenacao/blob/master/ordenacaomacros.h)
 
 # Verificando corretude dos algoritmos
 
-Para verificar se os algoritmos estão corretos você pode executar:
+Para verificar se os algoritmos estão corretos, você pode executar:
 
 ```
 make testesimples
 ```
 
-Que fará o teste com todos os algoritmos em cima do arquivo `10-reverso`,
-$1024$ elementos ordenados de forma não crescente. E mostrará o resultado do
-`digest` do arquivo gerado. Todos os algoritmos, exceto o `dummy`, devem
-possuir o mesmo valor.
+O comando iniciará o teste com todos os algoritmos em cima do arquivo `10-reverso`,
+$1024$ elementos ordenados de forma não crescente, e mostrará o resultado do
+`digest` do arquivo gerado. Todos os algoritmos devem possuir o mesmo valor.
 
-Agora com
+Agora, com:
 
 ```
 make teste
 ```
 
 Todos os algoritmos serão testados com todas as variações do arquivo com
-$2^15$, $32768$, elementos. Da mesma forma o HASH deve coincidir em todas as
+$2^15$, $32768$ elementos. Da mesma forma, o HASH deve coincidir em todas as
 implementações.
 
 # Benchmark
 
-Para rodar o benchmark com todos os algoritmos basta executar:
+Para rodar o benchmark com todos os algoritmos, basta executar:
 
 ```
 make time.ordenado time.reverso time.aleatorio
 ```
 
-Desta maneira ele irá testar todos as implementações com todas as
-configurações. Você executar apenas uma das configurações por vez, por
-exemplo:
+Desta forma, serão testadas todas as implementações com todas as
+configurações. Você também pode executar apenas uma das configurações por vez, como no exemplo: 
 
 ```
 make time.aleatorio
@@ -101,25 +119,25 @@ make time.aleatorio
 
  - gerando apenas as saídas contra os arquivos com disposição aleatória.
 
-Por padrão o tempo limite de execução está desligado, e você pode definir um
+Por padrão, o tempo limite de execução está desligado e você pode definir um
 tempo em segundos, por exemplo:
 
 ```
 TIMEOUT=3 make time.aleatorio
 ```
 
-Assim as implementações terão apenas $3$ segundos de tempo de execução.
+Assim, as implementações terão apenas $3$ segundos de tempo de execução.
 
-Você também pode testar apenas um subconjunto de métodos, definindo a
+Você também pode testar apenas um subconjunto de métodos definindo a
 variável `BINARY`, por exemplo:
 
 ```
 BINARY="quicksort shellsort" make time.reverso
 ```
 
-E você ainda pode combinar com a variável de `TIMEOUT` sem nenhum problema.
+E ainda pode combinar com a variável de `TIMEOUT` sem nenhum problema.
 
 # Limpando o ambiente
 
-Com diretiva `clean` todos os arquivos gerados serão removidos, tanto os
-binários, os arquivos de testes e os arquivos de resultado.
+Com a diretiva `clean`, todos os arquivos gerados serão removidos. Tanto os
+binários, quanto os arquivos de testes e os arquivos de resultado.
