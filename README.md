@@ -51,34 +51,40 @@ nomenclatura indica exatamente do que se trata: POTENCIA-CATEGORIA
 
 ## Ordenação
 
-- [bubblesort](https://github.com/bcribas/benchmark-ordenacao/blob/master/bubblesort.c)
-- [combsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/combsort.c)
-- [countingsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/countingsort.c)
-- [cppsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/cppsort.cpp)
-- [heapsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/heapsort.c)
-- [insertionsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/insertionsort.c)
-- [insertionsortslow](https://github.com/bcribas/benchmark-ordenacao/blob/master/insertionsortslow.c) - versão bobinha do insertion sort
-- [introsortquickheaplong](https://github.com/bcribas/benchmark-ordenacao/blob/master/introsortquickheaplongjmp.c)
-- [introsortquickmerge](https://github.com/bcribas/benchmark-ordenacao/blob/master/introsortquickmerge.c)
-- [introsortquickmergelong](https://github.com/bcribas/benchmark-ordenacao/blob/master/introsortquickheaplongjmp.c)
-- [mergesort](https://github.com/bcribas/benchmark-ordenacao/blob/master/mergesort.c)
-- [pqsortsimple](https://github.com/bcribas/benchmark-ordenacao/blob/master/pqsortsimple.c)
-- [quicksort](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksort.c) - versão ingênua do quicksort
-- [quicksortM3](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksortM3.c) - quick com Mediana de 3 elementos
-- [quicksortM3insertion](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksortM3insertion.c)
-- [quicksortinsertion](https://github.com/bcribas/benchmark-ordenacao/blob/master/quicksortinsertion.c)
-- [radixsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/radixsort.c)
-- [selectionsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/selectionsort.c)
-- [selectionsortR](https://github.com/bcribas/benchmark-ordenacao/blob/master/selectionsortR.c) - versão recursiva
-- [shellsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/shellsort.c)
-- [systemqsort](https://github.com/bcribas/benchmark-ordenacao/blob/master/systemqsort.c)
+- [bubblesort](bubblesort.c)
+- [combsort](combsort.c)
+- [countingsort](countingsort.c)
+- [cppsort](cppsort.cpp)
+- [heapsort](heapsort.c)
+- [insertionsort](insertionsort.c)
+- [insertionsortslow](insertionsortslow.c) 
+  - versão bobinha do insertion sort
+- [introsortquickheaplong](introsortquickheaplongjmp.c)
+- [introsortquickmerge](introsortquickmerge.c)
+- [introsortquickmergelong](introsortquickheaplongjmp.c)
+- [mergesort](mergesort.c)
+- [pqsortsimple](pqsortsimple.c)
+- [quicksort](quicksort.c) 
+  - versão ingênua do quicksort
+- [quicksortM3](quicksortM3.c) 
+  - quick com Mediana de 3 elementos
+- [quicksortM3insertion](quicksortM3insertion.c)
+- [quicksortinsertion](quicksortinsertion.c)
+- [radixsort](radixsort.c)
+- [selectionsort](selectionsort.c)
+- [selectionsortR](selectionsortR.c) 
+  - versão recursiva
+- [shellsort](shellsort.c)
+- [systemqsort](systemqsort.c)
+
 
 ## Outros  
 
-- [separa](https://github.com/bcribas/benchmark-ordenacao/blob/master/separa.c)
-- [priorityqueue](https://github.com/bcribas/benchmark-ordenacao/blob/master/priority-queue.c)
-- [gera-entrada](https://github.com/bcribas/benchmark-ordenacao/blob/master/gera-entrada)
-- [ordenacaomacros](https://github.com/bcribas/benchmark-ordenacao/blob/master/ordenacaomacros.h)
+- [separa](separa.c)
+- [priorityqueue](priority-queue.c)
+- [gera-entrada](gera-entrada)
+- [ordenacaomacros](ordenacaomacros.h)
+- dummy
 
 # Verificando corretude dos algoritmos
 
@@ -90,7 +96,8 @@ make testesimples
 
 O comando iniciará o teste com todos os algoritmos em cima do arquivo `10-reverso`,
 $1024$ elementos ordenados de forma não crescente, e mostrará o resultado do
-`digest` do arquivo gerado. Todos os algoritmos devem possuir o mesmo valor.
+`digest` do arquivo gerado. Todos os algoritmos, exceto o dummy, devem possuir
+o mesmo valor.
 
 Agora, com:
 
