@@ -105,7 +105,7 @@ time.%: $(BINARY) input/.in
 		echo "# $$B";\
 		for F in input/*-$(subst time.,,$@);do\
 			printf " ";\
-			timeout $(TIMEOUT) time -f %e ./$$B < $$F >/dev/null|| echo " TLE ";\
+			timeout $(TIMEOUT) time -f %e ./$$B < $$F >/dev/null|| echo " TLE";\
 		done 2>&1|tr -d '\n';\
 		echo;\
 	done | tee $@
@@ -115,7 +115,7 @@ teste: $(BINARY) input/.in
 		echo "# $$F";\
 		for B in $(BINARY); do\
 			printf "$$B ";\
-			timeout $(TIMEOUT) ./$$B < $$F |md5sum|| echo " TLE ";\
+			timeout $(TIMEOUT) ./$$B < $$F |md5sum|| echo " TLE";\
 		done;\
 		echo;\
 	done
