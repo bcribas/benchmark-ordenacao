@@ -66,6 +66,10 @@
 #define __mergesortonly__
 #include "mergesort.h"
 
+#elif defined(__insertionsortmetades__)
+#define __insertionsortmetadesonly__
+#include "insertionsortmetades.h"
+
 #elif defined(__quicksortM3insertion__)
 #define __quicksortM3insertiononly__
 #include "quicksortM3insertion.h"

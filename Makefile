@@ -23,6 +23,7 @@ BINARY?=dummy\
 				quicksortM3\
 				quicksortM3insertion\
 				mergesort\
+				insertionsortmetades\
 				systemqsort\
 				introsortquickmerge\
 				introsortquickmergelongjmp\
@@ -73,6 +74,9 @@ quicksortM3: main.c quicksortM3.c separa.c
 
 quicksortM3insertion: main.c quicksortM3insertion.c separa.c insertionsort.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+insertionsortmetades: main.c insertionsortmetades.c mergesort.c insertionsort.c
+	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
 
 introsortquickmerge: main.c introsortquickmerge.c separa.c insertionsort.c mergesort.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@ -lm
