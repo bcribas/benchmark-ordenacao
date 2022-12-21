@@ -41,8 +41,8 @@ Atualmente os arquivos de teste são gerados em 3 categorias:
    para o menor
  - Aleatório - permutação aleatória dos valores
 
-O tamanho das entradas variam de $2^8$ a $2^20$, ou de 256 a 1048576,
-elementos, com números inteiros podendo variar de 0 a 5000000.
+O tamanho das entradas variam de $2^8$ a $2^{20}$, ou de $256$ a $1048576$,
+elementos, com números inteiros podendo variar de $0$ a $5000000$.
 
 Os arquivos gerados ficam armazenados no diretório `input` e a sua
 nomenclatura indica exatamente do que se trata: POTENCIA-CATEGORIA
