@@ -29,7 +29,6 @@ BINARY?=dummy\
 				introsortquickmergelongjmp\
 				introsortquickheaplongjmp\
 				radixsort\
-				redblacktree\
 				cppsort\
 				pqsortsimple\
 				heapsort\

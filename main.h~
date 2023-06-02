@@ -102,8 +102,8 @@
 #define __radixsortonly__
 #include "radixsort.h"
 
-#elif defined(__redblacktree__)
-#define __redblacktreeonly__
+#elif defined(__redblacktree)
+#define __redblacktree__
 #include "redblacktree.h"
 
 #elif defined(__dummy__)
