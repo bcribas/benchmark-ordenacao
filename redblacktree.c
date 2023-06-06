@@ -16,8 +16,6 @@
 #include <stdlib.h>
 typedef enum color {RED, BLACK} color;
 
-int idx = 0;
-
 typedef struct no {
   Item item;
   struct no *esq, *dir;
@@ -70,7 +68,7 @@ no* insereRB(no *r, Item item){
   if(r == NULL) return novo_no(item, RED);
   if(less(item, r->item)) r->esq = insereRB(r->esq, item);
   else if(less(r->item, item)) r->dir = insereRB(r->dir, item);
-  else r->item = item;
+  else r->repeticoes++;
 
   if(!isRed(r->esq) && isRed(r->dir)) r = rotateL(r);
   if(isRed(r->esq) && isRed(r->esq->esq)) r = rotateR(r);
@@ -78,15 +76,15 @@ no* insereRB(no *r, Item item){
   return r;
 }
 
-void em_ordem(no *r, Item *v) {
+void em_ordem(no *r, Item *v, int *l) {
   if(r == NULL)
     return;
-  em_ordem(r->esq, &v[idx]);
+  em_ordem(r->esq, v, &l);
   for(int i = 0; i < r->repeticoes; i++) {
-    v[idx] = r->item;
-    idx++;
+    v[l] = r->item;
+    *l++;
   }
-  em_ordem(r->dir, &v[idx]);
+  em_ordem(r->dir, v, &l);
 }
 
 void redblacktree(Item *v, int l, int r){
@@ -94,5 +92,5 @@ void redblacktree(Item *v, int l, int r){
   for(int i = l; i <= r; i++) {
     RBT = insereRB(RBT, v[i]);
   }
-  em_ordem(RBT, v);
+  em_ordem(RBT, v, &l);
 }
