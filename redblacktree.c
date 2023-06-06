@@ -76,21 +76,22 @@ no* insereRB(no *r, Item item){
   return r;
 }
 
-void em_ordem(no *r, Item *v, int *l) {
+void em_ordem(no *r, Item *v, int *idx) {
   if(r == NULL)
     return;
-  em_ordem(r->esq, v, &l);
+  em_ordem(r->esq, v, idx);
   for(int i = 0; i < r->repeticoes; i++) {
-    v[l] = r->item;
-    *l++;
+    v[*idx] = r->item;
+    *idx = *idx + 1;
   }
-  em_ordem(r->dir, v, &l);
+  em_ordem(r->dir, v, idx);
 }
 
 void redblacktree(Item *v, int l, int r){
   no *RBT = NULL;
+  int idx = l;
   for(int i = l; i <= r; i++) {
     RBT = insereRB(RBT, v[i]);
   }
-  em_ordem(RBT, v, &l);
+  em_ordem(RBT, v, &idx);
 }
