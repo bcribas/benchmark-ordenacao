@@ -81,12 +81,12 @@ no* insereRB(no *r, Item item){
 void em_ordem(no *r, Item *v) {
   if(r == NULL)
     return;
-  em_ordem(r->esq, v);
+  em_ordem(r->esq, &v[idx]);
   for(int i = 0; i < r->repeticoes; i++) {
     v[idx] = r->item;
     idx++;
   }
-  em_ordem(r->dir, v);
+  em_ordem(r->dir, &v[idx]);
 }
 
 void redblacktree(Item *v, int l, int r){
