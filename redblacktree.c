@@ -85,6 +85,7 @@ void em_ordem(no *r, Item *v, int *idx) {
     *idx = *idx + 1;
   }
   em_ordem(r->dir, v, idx);
+  free(r);
 }
 
 void redblacktree(Item *v, int l, int r){
