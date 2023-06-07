@@ -30,6 +30,7 @@ no* novo_no(Item item, color color) {
   t->esq = NULL;
   t->dir = NULL;
   t->repeticoes = 1;
+  return t;
 }
 
 bool isRed(no *r) {

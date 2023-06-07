@@ -14,6 +14,13 @@
 #define __redblacktreeH__
 #include "ordenacaomacros.h"
 
+static no* novo_no(Item item, color color);
+static bool isRed(no *r);
+static no* rotateL(no* r);
+static no* rotateR(no* r);
+static void flipColors(no *r);
+static no* insereRB(no *r, Item item);
+static void em_ordem(no *r, Item *v, int *idx);
 void redblacktree(Item *,int,int);
 
 #ifdef __redblacktreeonly__
