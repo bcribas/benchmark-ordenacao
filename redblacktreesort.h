@@ -10,14 +10,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#ifndef __redblacktreeH__
-#define __redblacktreeH__
+#ifndef __redblacktreesortH__
+#define __redblacktreesortH__
 #include "ordenacaomacros.h"
 
 void redblacktreesort(Item *,int,int);
 
 #ifdef __redblacktreesortonly__
-#define sort(v,l,r) redblacktree(v,l,r)
+#define sort(v,l,r) redblacktreesort(v,l,r)
 #endif
 
 #endif
