@@ -23,7 +23,7 @@ typedef struct no {
   int repeticoes;
 }no;
 
-no* novo_no(Item item, color color) {
+static no* novo_no(Item item, color color) {
   no *t = malloc(sizeof(no));
   t->item = item;
   t->color = color;
@@ -33,7 +33,7 @@ no* novo_no(Item item, color color) {
   return t;
 }
 
-bool isRed(no *r) {
+static bool isRed(no *r) {
   if(r == NULL)
     return false;
   if(r->color == RED)
@@ -41,7 +41,7 @@ bool isRed(no *r) {
   return false;
 }
 
-no* rotateL(no* r) {
+static no* rotateL(no* r) {
   no *t = r->dir;
   r->dir = t->esq;
   t->esq = r;
@@ -50,7 +50,7 @@ no* rotateL(no* r) {
   return t;
 }
 
-no* rotateR(no* r) {
+static no* rotateR(no* r) {
   no *t = r->esq;
   r->esq = t->dir;
   t->dir = r;
@@ -59,13 +59,13 @@ no* rotateR(no* r) {
   return t;
 }
 
-void flipColors(no *r) {
+static void flipColors(no *r) {
   r->color = RED;
   r->esq->color = BLACK;
   r->dir->color = BLACK;
 }
 
-no* insereRB(no *r, Item item){
+static no* insereRB(no *r, Item item){
   if(r == NULL) return novo_no(item, RED);
   if(less(item, r->item)) r->esq = insereRB(r->esq, item);
   else if(less(r->item, item)) r->dir = insereRB(r->dir, item);
@@ -77,7 +77,7 @@ no* insereRB(no *r, Item item){
   return r;
 }
 
-void em_ordem(no *r, Item *v, int *idx) {
+static void em_ordem(no *r, Item *v, int *idx) {
   if(r == NULL)
     return;
   em_ordem(r->esq, v, idx);
