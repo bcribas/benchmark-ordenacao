@@ -55,6 +55,7 @@ nomenclatura indica exatamente do que se trata: POTENCIA-CATEGORIA
 - [combsort](combsort.c)
 - [countingsort](countingsort.c)
 - [cppsort](cppsort.cpp)
+- [cppmultisetsort](cppmultisetsort.c)
 - [heapsort](heapsort.c)
 - [insertionsort](insertionsort.c)
 - [insertionsortslow](insertionsortslow.c) 

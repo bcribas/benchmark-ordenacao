@@ -31,6 +31,7 @@ BINARY?=dummy\
 				radixsort\
 				redblacktreesort\
 				cppsort\
+				cppmultisetsort\
 				pqsortsimple\
 				heapsort\
 				countingsort
