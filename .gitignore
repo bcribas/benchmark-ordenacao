@@ -3,6 +3,7 @@ bubblesort
 dummy
 insertionsort
 insertionsortslow
+insertionsortmetades
 quicksort
 quicksortM3
 selectionsort
