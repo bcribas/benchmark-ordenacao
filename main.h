@@ -102,6 +102,10 @@
 #define __radixsortonly__
 #include "radixsort.h"
 
+#elif defined(__redblacktreesort__)
+#define __redblacktreesortonly__
+#include "redblacktreesort.h"
+
 #elif defined(__dummy__)
 #warning "DUMMY SORT, it will not sort"
 #define sort ;
