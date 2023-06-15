@@ -125,10 +125,11 @@ teste: $(BINARY) input/.in
 		echo;\
 	done
 
-testesimples: $(BINARY) input/.in
-	@for B in $(BINARY); do\
-		printf "$$B ";\
-		./$$B < input/10-reverso|md5sum;\
+testesimples: $(BINARY)
+	@for B in $(BINARY); do \
+		REVERSO=$$(./$$B < input/10-reverso          | md5sum | cut -d ' ' -f 1); \
+		REPETIDO=$$(./$$B < input/10-muitosrepetidos | md5sum | cut -d ' ' -f 1); \
+		printf "$$B - [$$REVERSO]  [$$REPETIDO]\n"; \
 	done
 
 echo%:
