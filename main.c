@@ -21,7 +21,7 @@ int main(void)
   int t;
   int r;
   r=scanf("%d",&t);
-  Item *v=malloc(t*sizeof(Item));
+  Item *v=(Item *)malloc(t*sizeof(Item));
   for(int i=0;i<t;i++)
     r=scanf("%d",&v[i]);
 
