@@ -18,4 +18,11 @@ typedef int Item;
 #define exch(A,B) { Item t; t=A;A=B;B=t; }
 #define cmpexch(A,B) { if (less(B,A)) exch(A,B); }
 
+#ifdef __cplusplus
+struct
+{
+  bool operator()(Item a,Item b) const { return less(a,b);}
+} compar;
+#endif
+
 #endif
