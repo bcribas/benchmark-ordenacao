@@ -106,6 +106,10 @@
 #define __redblacktreesortonly__
 #include "redblacktreesort.h"
 
+#elif defined(__cppsort__)
+#define __cppsortonly__
+#include "cppsort.h"
+
 #elif defined(__dummy__)
 #warning "DUMMY SORT, it will not sort"
 #define sort ;

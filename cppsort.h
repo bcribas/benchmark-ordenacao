@@ -10,10 +10,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
+#ifndef __cppsortH__
+#define __cppsorttH__
 #include <algorithm>
 #include "ordenacaomacros.h"
+void cppsort(Item *, int, int);
 
-void cppsort(Item *v, int l, int r)
-{
-  std::sort(v,&v[r+1],compar);
-}
+#ifdef __cppsortonly__
+#define sort(v,l,r) cppsort(v,l,r);
+#endif
+
+#endif
