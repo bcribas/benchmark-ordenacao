@@ -24,3 +24,4 @@ introsortquickheaplongjmp
 pqsortsimple
 radixsort
 redblacktreesort
+bstsort
