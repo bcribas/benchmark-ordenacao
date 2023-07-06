@@ -77,18 +77,23 @@ static no_st *insert(no_st *h, Item data){
     return h;
 }
 
-static void in_order(no_st *h){
+static void in_order(no_st *h, Item *v, int *it){
     int count = 0;
     if(h == NULL)
         return;
-    in_order(h->left);
-    while(count++ <= h->bumps);
-    in_order(h->right);
+    in_order(h->left, v, it);
+    while(count++ <= h->bumps){
+        v[*it] = h->data;
+        *it += 1;
+    }
+    in_order(h->right, v, it);
 }
 
 void bstsort(Item *v, int l, int r){
+    grow_pool(1<<20);
+    int it = l;
     no_st *root = NULL;
     for(int i=l; i<=r; ++i)
         root = insert(root, v[i]);
-    in_order(root);
+    in_order(root, v, &it);
 }
