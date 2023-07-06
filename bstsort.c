@@ -87,6 +87,7 @@ static void in_order(no_st *h, Item *v, int *it){
         *it += 1;
     }
     in_order(h->right, v, it);
+    free(h);
 }
 
 void bstsort(Item *v, int l, int r){
