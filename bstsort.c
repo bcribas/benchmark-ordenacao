@@ -11,51 +11,18 @@
  *
  */
 
-#include <stdlib.h>
 #include "bstsort.h"
 #include "ordenacaomacros.h"
+#include <stdlib.h>
 
-typedef int Item;
 typedef struct no_st{
     Item data;
     struct no_st *right, *left;
     int bumps;
 }no_st;
 
-static no_st *pool_head = NULL;
-
-static int empty_pool(){ return pool_head == NULL ? 1 : 0;}
-
-static int grow_pool(int n){
-    no_st *novo_no = malloc(sizeof(no_st)*n);
-    if(novo_no == NULL)
-        return 0;
-    
-    n--;
-    for(int i=0; i<n; ++i)
-        novo_no[i].right = &novo_no[i+1];
-    novo_no[n].right = pool_head;
-    pool_head = novo_no;
-    return 1;
-}
-
-static no_st* get_free_node(){
-    no_st *toReturn = pool_head;
-    pool_head = pool_head->right;
-    toReturn->bumps = 0;
-    toReturn->right = NULL;
-    toReturn->left = NULL;
-    return toReturn;
-}
-
-static void free_node(no_st *node){
-    node->right = pool_head;
-    pool_head = node;
-}
-
-static no_st *creat_node(Item data){
-    // no_st *novo_no = malloc(sizeof(no_st)); // aloca cada nó individualmente
-    no_st *novo_no = get_free_node(); // pega um nó da piscina de nós
+static no_st* create_node(Item data){
+    no_st *novo_no = malloc(sizeof(no_st));
     novo_no->data = data;
     novo_no->right = NULL;
     novo_no->left = NULL;
@@ -63,24 +30,22 @@ static no_st *creat_node(Item data){
     return novo_no;
 }
 
-static no_st *insert(no_st *h, Item data){
-    if(h == NULL)
-        return creat_node(data);
-
-    if(less(data, h->data))
-        h->left = insert(h->left, data);
-    else if(less(h->data, data))
-        h->right = insert(h->right, data);
-    else
-        // h->data = data; // atualiaza o Item
-        h->bumps++; // incrementa no contador de colisões
-    return h;
+static no_st* insert(no_st *r, Item data){
+    if(r == NULL)
+        return create_node(data);
+    if(less(data, r->data))
+        r->left = insert(r->left, data);
+    else if(less(r->data, data))
+        r->right = insert(r->right, data);
+    else 
+        r->bumps++;
+    return r;
 }
 
 static void in_order(no_st *h, Item *v, int *it){
-    int count = 0;
     if(h == NULL)
         return;
+    int count = 0;
     in_order(h->left, v, it);
     while(count++ <= h->bumps){
         v[*it] = h->data;
@@ -91,10 +56,9 @@ static void in_order(no_st *h, Item *v, int *it){
 }
 
 void bstsort(Item *v, int l, int r){
-    grow_pool(1<<20);
-    int it = l;
     no_st *root = NULL;
-    for(int i=l; i<=r; ++i)
+    int it = l;
+    for(int i = l; i <= r; i++)
         root = insert(root, v[i]);
     in_order(root, v, &it);
 }
