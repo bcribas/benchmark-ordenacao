@@ -34,7 +34,8 @@ BINARY?=dummy\
 				cppmultisetsort\
 				pqsortsimple\
 				heapsort\
-				countingsort
+				countingsort\
+				bstsort
 
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
@@ -97,6 +98,9 @@ pqsortsimple: main.c pqsortsimple.c priority-queue.c
 
 heapsort: main.c heapsort.c priority-queue.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@
+
+cppsort: main.c cppsort.cpp
+	g++ -D__$@__ $(CXXFLAGS) $^ -o $@
 
 printorder:
 	@for T in 08 09 10 11 12 13 14 15 16 17 18 19 20;do\

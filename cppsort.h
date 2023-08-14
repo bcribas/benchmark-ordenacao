@@ -10,19 +10,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
-#ifndef __ORDENACAOMACROS__
-#define __ORDENACAOMACROS__
-typedef int Item;
-#define less(A,B) ((A) < (B))
-#define lesseq(A,B) ((A) <= (B))
-#define exch(A,B) { Item t; t=A;A=B;B=t; }
-#define cmpexch(A,B) { if (less(B,A)) exch(A,B); }
+#ifndef __cppsortH__
+#define __cppsorttH__
+#include <algorithm>
+#include "ordenacaomacros.h"
+void cppsort(Item *, int, int);
 
-#ifdef __cplusplus
-struct
-{
-  bool operator()(Item a,Item b) const { return less(a,b);}
-} compar;
+#ifdef __cppsortonly__
+#define sort(v,l,r) cppsort(v,l,r);
 #endif
 
 #endif
