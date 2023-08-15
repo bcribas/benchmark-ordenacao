@@ -31,6 +31,7 @@ BINARY?=dummy\
 				radixsort\
 				redblacktreesort\
 				cppsort\
+				cppmultisetsort\
 				pqsortsimple\
 				heapsort\
 				countingsort\
@@ -99,6 +100,9 @@ heapsort: main.c heapsort.c priority-queue.c
 	gcc -D__$@__ $(CFLAGS) $^ -o $@
 
 cppsort: main.c cppsort.cpp
+	g++ -D__$@__ $(CXXFLAGS) $^ -o $@
+
+cppmultisetsort: main.c cppmultisetsort.cpp
 	g++ -D__$@__ $(CXXFLAGS) $^ -o $@
 
 printorder:

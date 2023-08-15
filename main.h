@@ -110,6 +110,10 @@
 #define __cppsortonly__
 #include "cppsort.h"
 
+#elif defined(__cppmultisetsort__)
+#define __cppmultisetsortonly__
+#include "cppmultisetsort.h"
+
 #elif defined(__bstsort__)
 #define __bstsortonly__
 #include "bstsort.h"
