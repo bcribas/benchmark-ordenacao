@@ -1,3 +1,4 @@
+
 /*
  * Copyright(C) 2020, Bruno César Ribas <bruno.ribas@unb.br>
  *
@@ -10,13 +11,13 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  */
+#ifndef __cppmultisetsortH__
+#define __cppmultisetsortH__
 #include "ordenacaomacros.h"
-#include <set>
+void cppmultisetsort(Item *, int, int);
 
-void cppmultisetsort(Item *v, int l, int r) {
-  std::multiset<Item> st(v + l, v + r + 1);
-  int i = 0;
-  for (auto it = st.begin(); it != st.end(); ++it) {
-    v[l + i++] = *it;
-  }
-}
+#ifdef __cppmultisetsortonly__
+#define sort(v, l, r) cppmultisetsort(v, l, r);
+#endif
+
+#endif
