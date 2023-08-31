@@ -34,7 +34,8 @@ BINARY?=dummy\
 				pqsortsimple\
 				heapsort\
 				countingsort\
-				bstsort
+				bstsort\
+				bstpoolsort
 
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)

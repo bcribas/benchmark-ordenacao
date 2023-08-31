@@ -25,3 +25,4 @@ pqsortsimple
 radixsort
 redblacktreesort
 bstsort
+bstpoolsort
