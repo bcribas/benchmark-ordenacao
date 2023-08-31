@@ -40,6 +40,11 @@ static no_st* get_free_node(){
     return toReturn;
 }
 
+static void free_node(no_st *node){
+    node->right = pool_head;
+    pool_head = node;
+}
+
 static no_st* create_node(Item data){
     no_st *novo_no = get_free_node();
     novo_no->data = data;
@@ -71,6 +76,7 @@ static void in_order(no_st *h, Item *v, int *it){
         *it += 1;
     }
     in_order(h->right, v, it);
+    free_node(h);
 }
 
 void bstpoolsort(Item *v, int l, int r){
@@ -80,4 +86,5 @@ void bstpoolsort(Item *v, int l, int r){
     for(int i = l; i <= r; i++)
         root = insert(root, v[i]);
     in_order(root, v, &it);
+    free(pool_head);
 }
