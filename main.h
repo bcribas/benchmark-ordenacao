@@ -118,6 +118,10 @@
 #define __bstpoolsortonly__
 #include "bstpoolsort.h"
 
+#elif defined(__redblacktreepoolsort__)
+#define __redblacktreepoolsortonly__
+#include "redblacktreepoolsort.h"
+
 #elif defined(__dummy__)
 #warning "DUMMY SORT, it will not sort"
 #define sort ;

@@ -35,7 +35,8 @@ BINARY?=dummy\
 				heapsort\
 				countingsort\
 				bstsort\
-				bstpoolsort
+				bstpoolsort\
+				redblacktreepoolsort
 
 ORDENADO=$(wildcard input/*ordenado)
 ALEATORIO=$(wildcard input/*aleatorio)
