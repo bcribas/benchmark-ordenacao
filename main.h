@@ -114,6 +114,10 @@
 #define __bstsortonly__
 #include "bstsort.h"
 
+#elif defined(__bstpoolsort__)
+#define __bstpoolsortonly__
+#include "bstpoolsort.h"
+
 #elif defined(__dummy__)
 #warning "DUMMY SORT, it will not sort"
 #define sort ;
